@@ -7,7 +7,7 @@ to ease your work, consider installing `homebrew` (https://docs.brew.sh/Homebrew
 
 work in class - getting acquainted with the following commands:
 - getting the docs: `man` (enter `q`to quit the manual)
-- nagivating across folders: `pwd`, `ls`, `cd`, `mkdir`, `rmdir`, `rm`, `tree`
+- nagivating across folders: `pwd`, `ls`, `cd`, `mkdir`, `rmdir`, `rm`, `tree`, `du -h`
 - creating a file: `touch`, redirecting standard output with `>`
 - understanding and changing file permissions (`chmod`)
 - working with archives: `tar` and tarballs
