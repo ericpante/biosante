@@ -15,6 +15,7 @@ work in class - getting acquainted with the following commands:
 - wildcards (characters with special meanings) and globbing: `?`, `*`, `!`, `[...]`...
 - piping: `|`
 - scripting: `.sh`
+- variables: `$PATH`, `HOME`, `$1`...
 
 ## getting data
 
@@ -47,6 +48,8 @@ fastq-dump ACCESSION ACCESSION ACCESSION ACCESSION ...
 ```
 
 ## looking at raw genomic data through `fastq`
+
+we are going to look at the data through the terminal and analyse its quality through `fastqc`. get the program (GUI and command-line) at https://www.bioinformatics.babraham.ac.uk/projects/fastqc/. First use the GUI to assess the quality (discussion in class) and then try to run the analysis from the terminal. 
 
 ## looking at genomic data through `vcf`
 
