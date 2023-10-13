@@ -2,13 +2,17 @@
 
 ## getting started and basic commands
 
-to ease your work, consider installing `brew` and `fish`.
+if you need to install software on ubuntu, check out `apt-get` https://doc.ubuntu-fr.org/apt-get. 
+to ease your work, consider installing `homebrew` (https://docs.brew.sh/Homebrew-on-Linux) and `fish` (https://fishshell.com). 
 
 work in class - getting acquainted with the following commands:
+- getting the docs: `man`
 - nagivating across folders: `pwd`, `ls`, `cd`, `mkdir`, `rmdir`, `rm`
 - creating a file: `touch`, redirecting standard output with `>`
 - understanding and changing file permissions (`chmod`)
 - working with archives: `tar` and tarballs
+- file download: `wget`
+
 
 ## getting data
 
