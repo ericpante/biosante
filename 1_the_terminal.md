@@ -6,7 +6,7 @@ if you need to install software on ubuntu, check out `apt-get` https://doc.ubunt
 to ease your work, consider installing `homebrew` (https://docs.brew.sh/Homebrew-on-Linux) and `fish` (https://fishshell.com). 
 
 work in class - getting acquainted with the following commands:
-- getting the docs: `man`
+- getting the docs: `man` (enter `q`to quit the manual)
 - nagivating across folders: `pwd`, `ls`, `cd`, `mkdir`, `rmdir`, `rm`
 - creating a file: `touch`, redirecting standard output with `>`
 - understanding and changing file permissions (`chmod`)
