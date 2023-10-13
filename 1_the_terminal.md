@@ -9,6 +9,7 @@ work in class - getting acquainted with the following commands:
 - getting the docs: `man` (enter `q`to quit the manual)
 - nagivating across folders: `pwd`, `ls`, `cd`, `mkdir`, `rmdir`, `rm`, `tree`, `du -h`
 - creating a file: `touch`, redirecting standard output with `>`
+- printing the content of a file: `cat` for zipped files : `zcat`
 - understanding and changing file permissions (`chmod`)
 - working with archives: `tar` and tarballs
 - file download: `wget`
