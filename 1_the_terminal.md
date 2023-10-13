@@ -12,7 +12,9 @@ work in class - getting acquainted with the following commands:
 - understanding and changing file permissions (`chmod`)
 - working with archives: `tar` and tarballs
 - file download: `wget`
-
+- wildcards: eg `*`
+- piping: `|`
+- scripting: `.sh`
 
 ## getting data
 
