@@ -7,19 +7,20 @@ to ease your work, consider installing `homebrew` (https://docs.brew.sh/Homebrew
 
 work in class - getting acquainted with the following commands:
 - getting the docs: `man` (enter `q`to quit the manual)
-- nagivating across folders: `pwd`, `ls`, `cd`, `mkdir`, `rmdir`, `rm`, `tree`, `du -h`
-- copying, moving `cp`, `mv`
-- creating a file: `touch`, redirecting standard output with `>`
+- nagivating across folders: `pwd`, `ls`, `cd`, `tree`, `du -h`
+- creating a file: `touch`, redirecting standard output with `>`, creating folder `mkdir`
+- copying `cp`, moving `mv`, removing `rmdir`, `rm`
 - printing the content of a file: `cat` for zipped files : `zcat`
 - understanding and changing file permissions (`chmod`)
 - working with archives: `tar` and tarballs
+- compressing `gzip`
 - file download: `wget`
 - wildcards (characters with special meanings) and globbing: `?`, `*`, `!`, `[...]`...
 - piping: `|`
 - scripting: `.sh`
 - variables: `$PATH`, `$HOME`, `$1`...
 
-## getting data
+## getting `fastq`data
 
 have a look at the NIH Small Read Archive: https://www.ncbi.nlm.nih.gov/sra/?term=SRR1754715 
 SRR1754715 is a `fastq` file from SRA (RADseq Pedicularis sect. Cyathophora). you can get the data manually through the SRA interface but we are going to do it through the terminal. 
@@ -50,6 +51,28 @@ fastq-dump ACCESSION ACCESSION ACCESSION ACCESSION ...
 ```
 
 ## looking at raw genomic data through `fastq`
+
+check out the footprint of the file with `gzip SRR1754715.fastq`and `gunzip SRR1754715.fastq` and looking at file size with `ls -lh *SRR1754715*`. what is the compression ratio ? what does `-lh`do ? 
+
+let's look at the raw data: `cat SRR1754715.fastq | head`. what is `head` ? what is the `pipe`doing ? 
+
+```
+@SRR1754715.1 GRC13_0027_FC:4:1:12560:1179 length=74
+TGCAGGAAGGAGATTTTCGNACGTAGTGNNNNNNNNNNNNNNGCCNTGGATNNANNNGTGTGCGTGAAGAANAN
++SRR1754715.1 GRC13_0027_FC:4:1:12560:1179 length=74
+IIIIIIIGIIIIIIFFFFF#EEFE<?################################################
+@SRR1754715.2 GRC13_0027_FC:4:1:15976:1183 length=74
+TGCAGTTGTAAATACAAATATCCCAAAANNNNGNNNNNNNTNTAATATTTTGNAANNTTGAGGGGTGTGATNTN
++SRR1754715.2 GRC13_0027_FC:4:1:15976:1183 length=74
+GGGGHHHHHHHHHHHHHDHGHHHHCAAA##############################################
+@SRR1754715.3 GRC13_0027_FC:4:1:19092:1179 length=74
+TGCAGGCTCTGACAAAGAANTCGACTGANNNNNNNNNNNNNNCACNGGTTCNNGNNNATGTCAATGTGGTANAN
+```
+
+check out the start of the `fastq` sequence ; what is the `TGCA`motif ? 
+
+
+how would you check the number of sequences contained in this file ? 
 
 we are going to look at the data through the terminal and analyse its quality through `fastqc`. get the program (GUI and command-line) at https://www.bioinformatics.babraham.ac.uk/projects/fastqc/. First use the GUI to assess the quality (discussion in class) and then try to run the analysis from the terminal. 
 
