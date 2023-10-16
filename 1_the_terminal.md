@@ -13,7 +13,7 @@ work in class - getting acquainted with the following commands:
 - printing the content of a file: `cat` for zipped files : `zcat`
 - understanding and changing file permissions (`chmod`)
 - working with archives: `tar` and tarballs
-- compressing `gzip`
+- compressing `gzip` and decompressing `gunzip`
 - file download: `wget`
 - wildcards (characters with special meanings) and globbing: `?`, `*`, `!`, `[...]`...
 - piping: `|`
