@@ -97,11 +97,13 @@ running the app from the terminal has the advantage of allowing batch analysis o
 
 ```
 #!/bin/bash           # interpret the script in bash
-                      # batch_fqc.sh SRR1754715.fastq to execute
-for i in "$@" ; do    # for each file in the folder, do
+                      # 'batch_fqc.sh file1.fq file2.fq file3.fq' to execute
+for i in "$@" ; do    # for each file listed as arguments, do
     ./fastqc $i       # runs fastqc for each item of the for loop (var 'i' is incremented)
 done                  # close the loop
 ```
+
+`$@` is an array-like construct of all positional parameters, here {$1, $2, $3}`.
 
 ## looking at genomic data through `vcf`
 
