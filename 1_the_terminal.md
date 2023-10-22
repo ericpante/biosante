@@ -82,5 +82,26 @@ here is another way: use `grep`to find a pattern that matches the sequence names
 
 we are going to look at the data through the terminal and analyse its quality through `fastqc`. get the program (GUI and command-line) at https://www.bioinformatics.babraham.ac.uk/projects/fastqc/. First use the GUI to assess the quality (discussion in class) and then try to run the analysis from the terminal. 
 
+```
+epante@NORVEGE ~/D/bioinfo> ./fastqc SRR1754715.fastq
+null
+Started analysis of SRR1754715.fastq
+Approx 5% complete for SRR1754715.fastq
+[...]
+Approx 95% complete for SRR1754715.fastq
+Analysis complete for SRR1754715.fastq
+epante@NORVEGE ~/D/bioinfo> 
+```
+
+running the app from the terminal has the advantage of allowing batch analysis of files : consider the following script called `batch_fqc.sh`: 
+
+```
+#!/bin/bash           # interpret the script in bash
+                      # batch_fqc.sh SRR1754715.fastq to execute
+for i in "$@" ; do    # for each file in the folder, do
+    ./fastqc $i       # runs fastqc for each item of the for loop (var 'i' is incremented)
+done                  # close the loop
+```
+
 ## looking at genomic data through `vcf`
 
