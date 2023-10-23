@@ -93,17 +93,47 @@ Analysis complete for SRR1754715.fastq
 epante@NORVEGE ~/D/bioinfo> 
 ```
 
-running the app from the terminal has the advantage of allowing batch analysis of files : consider the following script called `batch_fqc.sh`: 
+running the app from the terminal has the advantage of allowing batch analysis of files : consider the following script called `batch_fqc.sh`, calling the sub-routine `run_fastqc.sh`:
+
+```#!/bin/bash
+
+## USAGE
+## run_fastqc SRR1754715.fastq
+
+# 1. Run fastqc
+~/Downloads/FastQC/./fastqc $1
+
+# 2. Prep folder
+name=$(echo $1 | cut -d '.' -f 1)
+suff="_fastqc"
+fold="$name$suff"
+
+echo "Unzipping..."
+unzip -o $fold 
+echo "...done."
+echo ""
+
+# Parse result
+echo "Parsing..."
+~/Downloads/./parsing_fastqc.sh $fold/fastqc_data.txt > Results_fastq_parsing.txt
+echo "...done."
+# chmod a+x run_fastqc.sh
+```
+
+and then
 
 ```
 #!/bin/bash           # interpret the script in bash
                       # 'batch_fqc.sh file1.fq file2.fq file3.fq' to execute
 for i in "$@" ; do    # for each file listed as arguments, do
-    ./fastqc $i       # runs fastqc for each item of the for loop (var 'i' is incremented)
+    ./run_fastqc.sh $i   # runs fastqc for each item of the for loop (var 'i' is incremented)
 done                  # close the loop
 ```
 
 `$@` is an array-like construct of all positional parameters, here {$1, $2, $3}`.
+
+now we can parse the results of `fastqc` into a table : 
+https://github.com/ericpante/bioinfo/blob/main/parsing_fastqc.sh 
 
 ## looking at genomic data through `vcf`
 
