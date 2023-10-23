@@ -80,7 +80,7 @@ echo $nseq
 
 here is another way: use `grep`to find a pattern that matches the sequence names: `grep "^@SRR" SRR1754715.fastq | wc -l`
 
-### `fasttqc` for quality control
+### `fastqc` for quality control
 
 we are going to look at the data through the terminal and analyse its quality through `fastqc`. get the program (GUI and command-line) at https://www.bioinformatics.babraham.ac.uk/projects/fastqc/. First use the GUI to assess the quality (discussion in class) and then try to run the analysis from the terminal. 
 
