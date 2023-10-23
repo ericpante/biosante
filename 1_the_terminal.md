@@ -80,6 +80,8 @@ echo $nseq
 
 here is another way: use `grep`to find a pattern that matches the sequence names: `grep "^@SRR" SRR1754715.fastq | wc -l`
 
+### `fasttqc` for quality control
+
 we are going to look at the data through the terminal and analyse its quality through `fastqc`. get the program (GUI and command-line) at https://www.bioinformatics.babraham.ac.uk/projects/fastqc/. First use the GUI to assess the quality (discussion in class) and then try to run the analysis from the terminal. 
 
 ```
@@ -130,10 +132,30 @@ for i in "$@" ; do    # for each file listed as arguments, do
 done                  # close the loop
 ```
 
-`$@` is an array-like construct of all positional parameters, here {$1, $2, $3}`.
+`$@` is an array-like construct of all positional parameters, here `{$1, $2, $3}`.
 
 now we can parse the results of `fastqc` into a table : 
 https://github.com/ericpante/bioinfo/blob/main/parsing_fastqc.sh 
+
+### other handy scripts for `fastq` manipulation
+
+an example of file format convertion from `fastq`to `fasta` using `sed`:
+```
+#!/bin/bash
+grep -A1 "@SRR*" $1 | sed 's/@SRR/>SRR/g' | sed '/--/d'
+```
+
+an example of batch calculation of sequence numbers from the `fastq` file format:
+```
+#!/bin/bash
+for i in "$@" ; do
+    n=$(grep "@SRR*" $i | wc -l)
+    echo "$i contains $n sequences"
+done
+```
+what would you change to make this script work for `fasta`? for either file format? 
+
+
 
 ## looking at genomic data through `vcf`
 
